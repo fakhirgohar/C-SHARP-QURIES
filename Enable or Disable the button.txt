@@ -1,0 +1,4 @@
+cmdNew.Enabled = true;
+cmdupdate.Enabled = false;
+cmddelete.Enabled = true;
+cmdfind.Enabled = true;

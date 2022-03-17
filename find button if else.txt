@@ -1,0 +1,18 @@
+ if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string StdId = (reader[0].ToString());
+                    String StdName = (reader[1].ToString());
+
+                    this.txtID.Text = StdId;
+                    this.txtName.Text = StdName;
+                    
+                }
+            }
+            else
+            {
+                this.txtName.Text = "";
+                MessageBox.Show("NO RECORD FOUND OF THIS ID");
+               
+            }

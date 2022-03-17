@@ -1,0 +1,9 @@
+if (scalar != DBNull.Value)
+            {
+                i = (int)scalar + 1;
+            }
+
+            else 
+            {
+                 i = 1;
+            }

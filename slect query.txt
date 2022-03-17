@@ -1,0 +1,9 @@
+
+method 1:
+
+string query1 = $"select {txtID.Tag.ToString()},{txtName.Tag.ToString()} from std_rec where Student_ID = {txtID.Text}";
+
+
+method 2:
+
+string query1 = "select Student_ID,Student_name from std_rec where Student_ID = '" + Student_ID1 + "'";

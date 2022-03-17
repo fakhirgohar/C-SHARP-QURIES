@@ -1,0 +1,10 @@
+if (tbname.Text.Trim() == "")
+            {
+
+                MessageBox.Show("Enter student_Name");
+                return;
+            }
+            else if (tbid.Text.Trim() == "")
+            {
+                MessageBox.Show("Enter Student_ID");
+                return

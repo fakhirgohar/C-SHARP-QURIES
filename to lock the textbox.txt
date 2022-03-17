@@ -1,0 +1,1 @@
+this.txtName.ReadOnly = true;

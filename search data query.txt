@@ -1,0 +1,2 @@
+string searchdata = tbid.Text;
+string query = "select Student_ID,Student_name from std_rec where Student_ID = '" + searchdata+"'";

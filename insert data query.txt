@@ -1,0 +1,3 @@
+string Student_ID = tbid.Text;
+                string Student_name = tbname.Text;
+                string query = "insert into std_rec(Student_ID, Student_name) values('" + Student_ID + "', '" + Student_name + "')";

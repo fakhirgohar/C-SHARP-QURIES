@@ -1,0 +1,1 @@
+"Update std_rec set Student_name='"+ Student_name + "' Where Student_Id='" + Student_ID + "'";

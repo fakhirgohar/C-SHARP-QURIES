@@ -1,0 +1,9 @@
+string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+
+SqlConnection con = new SqlConnection(connectionstring);
+
+con.Open();
+
+Here is the code
+
+con.Close():

@@ -1,0 +1,5 @@
+string query1 = "delete from std_rec where Student_ID='"+ student_id + "'";
+               
+SqlCommand cmd1 = new SqlCommand(query1, con);
+                
+cmd1.ExecuteNonQuery();
