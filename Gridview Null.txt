@@ -1,0 +1,3 @@
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();

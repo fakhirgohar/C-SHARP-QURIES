@@ -1,0 +1,16 @@
+private void txtSEARCH_Enter(object sender, EventArgs e)
+        {
+            if (txtSEARCH.Text == "Enter Name")
+            {
+                txtSEARCH.Text = "";
+                txtSEARCH.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtSEARCH_Leave(object sender, EventArgs e)
+        {
+            if (txtSEARCH.Text == "")
+                txtSEARCH.Text = "Enter Name";
+            txtSEARCH.ForeColor = Color.Silver;
+        }
+    }

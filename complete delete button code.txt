@@ -1,0 +1,58 @@
+ private void cmddelete_Click(object sender, EventArgs e)
+        {
+
+            if (txtID.Text.Trim() == "")
+            {
+                MessageBox.Show("Enter Student_ID");
+                return;
+
+            }
+            if (txtName.Text.Trim() == "")
+            {
+
+                MessageBox.Show("Enter student_Name");
+                return;
+            }
+            string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            string Student_ID = txtID.Text;
+            string query = "select Student_ID,Student_name from std_rec where Student_ID = '" + Student_ID + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            var reader = cmd.ExecuteReader();
+            int i;
+
+            if (reader.HasRows)
+            {
+                i = 1;
+            }
+
+            else
+            {
+                i = 0;
+            }
+
+            reader.Close();
+            con.Close();
+
+           
+            
+            con.Open();
+            string student_id = txtID.Text;
+            
+            if (i == 0)
+            {
+                MessageBox.Show("No Record To Delete");
+               
+            }
+            if (i == 1)
+            {
+               string query1 = "delete from std_rec where Student_ID='"+ student_id + "'";
+                SqlCommand cmd1 = new SqlCommand(query1, con);
+                cmd1.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully");
+                this.txtID.Text = "";
+                this.txtName.Text = "";
+            }
+           
+            con.Close();

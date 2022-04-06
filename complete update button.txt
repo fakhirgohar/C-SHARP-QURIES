@@ -1,0 +1,83 @@
+private void cmdupdate_Click(object sender, EventArgs e)
+        {
+
+            if ( string.IsNullOrEmpty( txtID.Text.Trim() ) )
+            {
+                MessageBox.Show("Enter Student_ID");
+                return;
+            }
+            if (txtName.Text.Trim() == "")
+            {
+                MessageBox.Show("Enter student_Name");
+                return;
+            }
+
+            string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+            SqlConnection con = new SqlConnection(connectionstring);
+             
+
+             con.Open();
+             string Student_ID1 = txtID.Text;
+             string query1 = $"select Student_ID,Student_name from std_rec where Student_ID = '" + Student_ID1 + "'";
+             SqlCommand cmd1 = new SqlCommand(query1, con);
+             var reader = cmd1.ExecuteReader();
+             int i ;
+
+                if (reader.HasRows)
+                {
+                    i = 1;
+                }
+
+                else
+                {
+                    i = 0;
+                }
+
+             reader.Close();
+             con.Close();
+
+
+
+
+                con.Open();
+                    string Student_ID = txtID.Text;
+                    string Student_name = txtName.Text;
+                    string query;
+                if (i == 0)
+                
+                {
+                     query = "insert into std_rec(Student_ID, Student_name) values('" + Student_ID + "', '" + Student_name + "')";
+                }
+
+                else 
+
+                {
+                     query = "Update std_rec set Student_name='"+ Student_name + "' Where Student_Id='" + Student_ID + "'";
+                }
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+
+                MessageBox.Show("Data has been saved");
+
+                 this.txtID.Text = "";
+                 this.txtName.Text = "";
+                 this.txtFind.Text = "";
+
+                 this.txtName.ReadOnly = true;
+                
+
+
+                  cmdNew.Enabled = true;
+                  cmdupdate.Enabled = false;
+                  cmddelete.Enabled = true;
+                  cmdfind.Enabled = true;
+                  txtFind.Enabled = true;
+            
+            this.ActiveControl = this.cmdNew;
+
+
+
+        }

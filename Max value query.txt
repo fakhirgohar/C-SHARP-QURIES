@@ -1,0 +1,9 @@
+method1:
+
+query1 = "select Max(Student_ID) from std_rec";
+
+
+
+mehtod2:
+
+SELECT IsNULL(MAX(std_ID), 0) + 1 FROM lms WITH(NOLOCK)

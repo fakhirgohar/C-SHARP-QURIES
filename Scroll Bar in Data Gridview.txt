@@ -1,0 +1,1 @@
+dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1;

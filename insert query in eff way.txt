@@ -1,1 +1,6 @@
-string query1 = $"select {txtID.Tag.ToString()},{txtName.Tag.ToString()} from std_rec where Student_ID = {txtID.Text}";
+
+$"INSERT INTO lms(std_ID,std_NAME) VALUES ('{ID}','{NAME}')";
+
+
+
+

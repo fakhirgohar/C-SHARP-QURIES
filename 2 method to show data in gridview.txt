@@ -1,0 +1,13 @@
+ string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            var query1 = "select * from std_rec";
+            SqlCommand cmd = new SqlCommand(query1, con);
+            var reader = cmd.ExecuteReader();
+           while ( reader.Read())
+            {
+                var id = reader["Student_ID"];
+                var name = reader["Student_name"];
+                dataGridView1.Rows.Add(id, name);
+            }
+            con.Close();

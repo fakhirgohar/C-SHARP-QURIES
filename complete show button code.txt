@@ -1,0 +1,79 @@
+private void cmdfind_Click_1(object sender, EventArgs e)
+        {
+            string query1;
+            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1; //Scroll Bar option 
+
+            
+                string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+                using (SqlConnection con = new SqlConnection(connectionstring))
+
+
+                {
+                    con.Open();
+                    string Search = txtFind.Text;
+
+                    if (string.IsNullOrEmpty(txtFind.Text.Trim()))
+                    {
+                        query1 = "select * from std_rec Order by Student_Id";
+                    }
+                    else
+                    {
+                        query1 = $"select * from std_rec with(nolock) where Student_name like '{Search}%'";
+                        string a = string.Empty;
+                    }
+
+                    SqlCommand cmd = new SqlCommand(query1, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    dataGridView1.DataSource = dt;
+                }
+            
+
+
+
+        }
+
+
+
+
+
+                            Mehtod 2:
+
+
+
+private void cmdfind_Click_1(object sender, EventArgs e)
+        {
+            string query1;
+            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1; //Scroll Bar option 
+
+            
+                string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+                using (SqlConnection con = new SqlConnection(connectionstring))
+
+
+                {
+                    con.Open();
+                    string Search = txtFind.Text;
+
+                    if (string.IsNullOrEmpty(txtFind.Text.Trim()))
+                    {
+                        query1 = "select * from std_rec Order by Student_Id";
+                    }
+                    else
+                    {
+                        query1 = $"select * from std_rec where Student_name like '{Search}%'";
+                        string a = string.Empty;
+                    }
+
+                    SqlCommand cmd = new SqlCommand(query1, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    dataGridView1.DataSource = dt;
+                }
+            
+
+
+
+        }

@@ -1,0 +1,20 @@
+string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter(Form1.query, con);
+            DataSet1 ds1 = new DataSet1();
+            da.Fill(ds1, "Datatable_Record");
+            ReportDataSource dataSource = new ReportDataSource("DataSet_Report", ds1.Tables[0]);
+
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(dataSource);
+            this.reportViewer1.RefreshReport();
+            con.Close();
+
+
+
+
+
+
+namespace PROJECT__SCHOOL.REPORT

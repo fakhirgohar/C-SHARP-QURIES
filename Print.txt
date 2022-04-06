@@ -1,0 +1,12 @@
+1.
+
+PRINT_FORM rptForm = new PRINT_FORM();
+                rptForm.Show();
+
+
+2. 
+
+
+PRINT_FORM rptForm = new PRINT_FORM();
+                query = $"Select * from std_rec where student_id = '{txtID.Text}'";
+                rptForm.Show();

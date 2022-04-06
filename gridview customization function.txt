@@ -1,0 +1,12 @@
+void StyleDatagridview()
+        {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(22, 204, 224);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView1.DefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            dataGridView1.BackgroundColor = Color.FromArgb(177, 227, 221);
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.EnableHeadersVisualStyles = false;
+       
+        }

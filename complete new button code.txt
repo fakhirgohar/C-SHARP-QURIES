@@ -1,0 +1,41 @@
+ private void cmdNew_Click(object sender, EventArgs e)
+        {
+            string connectionstring = "Data Source=DESKTOP-O0ATRMQ;Initial Catalog=SchoolRecord;Integrated Security=True";
+            SqlConnection con = new SqlConnection(connectionstring);
+
+
+            con.Open();
+            string query1 = "select Max(Student_ID) from std_rec";
+            SqlCommand cmd1 = new SqlCommand(query1, con);
+            var scalar = cmd1.ExecuteScalar();
+            Int32 i;
+
+            if (scalar != DBNull.Value)
+            {
+                i = (Int32)scalar + 1;
+            }
+
+            else 
+            {
+                 i = 1;
+            }
+           
+            this.txtID.Text = Convert.ToString(i);
+            con.Close();
+
+            this.txtName.Text = "";
+            this.txtName.ReadOnly = false;
+
+            
+
+            cmdNew.Enabled = false;
+            cmdupdate.Enabled = true;
+            cmddelete.Enabled = false;
+            cmdfind.Enabled = false;
+            txtFind.Enabled = false;
+
+
+            this.ActiveControl = this.txtName;
+
+
+        }

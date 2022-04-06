@@ -1,1 +1,7 @@
 "Update std_rec set Student_name='"+ Student_name + "' Where Student_Id='" + Student_ID + "'";
+
+
+
+method2:
+
+$"Update std_rec set Student_name= '{ID}' Where Student_Id= '{NAME}' ";

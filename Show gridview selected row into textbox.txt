@@ -1,0 +1,12 @@
+ private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[index];
+            txtID.Text = selectedRow.Cells[0].Value.ToString();
+            txtName.Text = selectedRow.Cells[1].Value.ToString();
+        }
+
+METHOD 2:
+
+txtID.Text = dataGridView1.SelectedRows[0].Cells["Column1"].Value.ToString();
+txtNAME.Text = dataGridView1.SelectedRows[0].Cells["Column2"].Value.ToString();

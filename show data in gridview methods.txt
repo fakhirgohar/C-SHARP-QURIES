@@ -1,0 +1,30 @@
+1st:
+
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            dataGridView1.DataSource = dt;
+
+
+2nd:
+
+     while (reader.Read())
+            {
+                var id = reader["Student_ID"];
+                var name = reader["Student_Name"];
+                dataGridView1.Rows.Add(id, name);
+            }
+
+
+                          
+
+                             OR
+
+
+
+            while (reader.Read())
+            {
+                dataGridView1.Rows.Add(reader["Student_ID"], reader["Student_Name"]);
+            }
+
+
+            
